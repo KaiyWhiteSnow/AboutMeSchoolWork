@@ -40,12 +40,21 @@
                             <li><a class="dropdown-item" href="#">Current progress</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Account</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <span class="navbar-text"> <img width="30" height="30" class="d-inline-block align-top" alt="Logo" src="/static/img/pfp.png" />{{sessionUser}}</span>
+                        </div>
+                    </li>
                 </ul>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <span class="navbar-text"> <img width="30" height="30" class="d-inline-block align-top" alt="Logo" src="/static/img/pfp.png" />{{username}}</span>
-                </div>
             </div>
         </div>
     </nav>
+
 </body>
 </html>

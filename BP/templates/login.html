@@ -40,17 +40,14 @@
                             <li><a class="dropdown-item" href="#">Current progress</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <span class="navbar-text"> <img width="30" height="30" class="d-inline-block align-top" alt="Logo" src="/static/img/pfp.png" />{{Username}}</span>
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Logout</a>
-                        
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/templates/logout">Logout</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <form method="post">
+        <p><input type="text" name="username" placeholder="Username"></p>
+        <p><input type="password" name="password" placeholder="Password"></p>
+        <p><input class="btn btn-primary" type="submit" value="Login"></p>
+    </form>
 </body>
 </html>

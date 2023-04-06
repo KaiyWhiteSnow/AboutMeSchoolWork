@@ -2,25 +2,21 @@ from flask import Flask, request, redirect, url_for, session, render_template
 
 # Define a list of hardcoded users
 users = {"SysAdmin": "Password"}
-username = "SysAdmin"
+sessionUser = "SysAdmin"
+
 
 app = Flask(__name__)
-app.secret_key = 'mysecretkey'  # Set a secret key for session management
+app.secret_key = "key"
 
-@app.route('/')
-def index():
-    # Check if the user is already logged in
-    if "username" in session:
-        return render_template("index.html", username=username)
-    else:
+@app.route("/", methods=['GET', 'POST'])
+def home():
+    if "username" not in session:
         return render_template("login.html")
+    else:
+        return render_template("index.html", sessionUser=sessionUser)
     
-@app.route('/login', methods=['GET', 'POST'])
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    # Check if the user is already logged in
-    if 'username' in session:
-        return render_template("index.html")
-
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -31,8 +27,14 @@ def login():
             return redirect(url_for('home'))
         else:
             return 'Invalid username or password. <a href="/login">Try again</a>'
-
-    return render_template("login.html")
     
+    return render_template("login.html")
+
+@app.route('/logout')
+def logout():
+    # Remove the username from the session if it's there
+    session.pop('username', None)
+    return redirect(url_for('login'))  # Update to redirect to 'login' route
+
 if __name__ == "__main__":
     app.run(debug=True)
