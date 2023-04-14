@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Flask App</title>
+    <title>Kaiy | Login</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </head>
@@ -35,7 +36,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sokkatto</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Who Is Sokkatto</a></li>
+                            <li><a class="dropdown-item" href="#">What Is Sokkatto</a></li>
                             <li><a class="dropdown-item" href="#">How It All Started</a></li>
                             <li><a class="dropdown-item" href="#">Current progress</a></li>
                         </ul>
@@ -44,10 +45,12 @@
             </div>
         </div>
     </nav>
-    <form method="post">
-        <p><input type="text" name="username" placeholder="Username"></p>
-        <p><input type="password" name="password" placeholder="Password"></p>
-        <p><input class="btn btn-primary" type="submit" value="Login"></p>
-    </form>
+    <div id="example-div" class="d-flex aligns-items-center justify-content-center MarginTop" style="height:100px">
+        <form method="post">
+            <p><input type="text" name="username" placeholder="Username"></p>
+            <p><input type="password" name="password" placeholder="Password"></p>
+            <p><input class="btn btn-primary" type="submit" value="Login"></p>
+        </form>
+    </div>
 </body>
 </html>
