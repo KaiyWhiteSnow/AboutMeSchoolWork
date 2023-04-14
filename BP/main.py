@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, url_for, session, render_template
 
 # Define a list of hardcoded users
-users = {"SysAdmin": "Password"}
+users = {"Admin": "Heslo"}
 sessionUser = "SysAdmin"
 
 
@@ -11,7 +11,7 @@ app.secret_key = "key"
 @app.route("/", methods=['GET', 'POST'])
 def home():
     if "username" not in session:
-        return render_template("login.html")
+        return render_template("index.html")
     else:
         return render_template("index.html", sessionUser=sessionUser)
     
