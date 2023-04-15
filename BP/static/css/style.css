@@ -1,3 +1,10 @@
 .MarginTop{
     margin-top: 75px;
 }
+.offset{
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.parOffset{
+    margin-top: 15px;
+}
