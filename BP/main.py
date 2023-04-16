@@ -40,5 +40,9 @@ def logout():
 def StoryOfKaiy():
     return render_template("StoryOfKaiy.html")
 
+@app.route('/Art')
+def Art():
+    return render_template("Art.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
