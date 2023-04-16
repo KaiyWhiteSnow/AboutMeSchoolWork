@@ -8,7 +8,7 @@ sessionUser = "SysAdmin"
 app = Flask(__name__)
 app.secret_key = "key"
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/index", methods=['GET', 'POST'])
 def home():
     if "username" not in session:
         return render_template("index.html")
@@ -35,6 +35,10 @@ def logout():
     # Remove the username from the session if it's there
     session.pop('username', None)
     return redirect(url_for('login'))  # Update to redirect to 'login' route
+
+@app.route('/StoryOfKaiy')
+def StoryOfKaiy():
+    return render_template("StoryOfKaiy.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
