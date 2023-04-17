@@ -8,12 +8,17 @@ sessionUser = "SysAdmin"
 app = Flask(__name__)
 app.secret_key = "key"
 
-@app.route("/index", methods=['GET', 'POST'])
-def home():
+@app.route("/", methods=['GET', 'POST'])
+def notHome():
     if "username" not in session:
         return render_template("index.html")
     else:
         return render_template("index.html", sessionUser=sessionUser)
+
+@app.route("/index", methods=['GET', 'POST'])
+def home():    
+    return render_template("index.html")
+    
     
 @app.route("/login", methods=['GET', 'POST'])
 def login():
