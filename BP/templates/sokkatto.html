@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kaiy | My Story</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <div class="collapse navbar-collapse" id="navbarText">
+                            <span class="navbar-text"> <img width="30" height="30" class="d-inline-block align-top" alt="Logo" src="/static/img/pfp.png" />{{sessionUser}}</span>
+                        </div>
+                    </li>
+                </ul>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Introduction</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./index">Personal</a></li>
+                            <li><a class="dropdown-item" href="./StoryOfKaiy">Story Of Kaiy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">My Work</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Art</a></li>
+                            <li><a class="dropdown-item" href="#">Literature</a></li>
+                            <li><a class="dropdown-item" href="#">Philosophy</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sokkatto</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">What Is Sokkatto</a></li>
+                            <li><a class="dropdown-item" href="#">How It All Started</a></li>
+                            <li><a class="dropdown-item" href="#">Current progress</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Account</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="parOffset d-flex justify-content-center">
+        <h3>
+            Where did name Sokkatto come from?
+        </h3>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p>
+            The exact origin of this name is unknown however it does come from <br>
+            one of my older names which were not mentioned in an introduction. <br>
+            Sokkatto became sort of side character for me. 
+        </p>
+    </div>
+    <div class="parOffset d-flex justify-content-center">
+        <h3>
+            Why is it so important to me?
+        </h3>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p>
+            The name Sokkatto was given to my current biggest project. It is a <br>
+            rust+ / discord bot which converts information from app rust+ into <br>
+            graphical form.
+        </p>
+    </div><div class="parOffset d-flex justify-content-center">
+        <h3>
+            So how does it work?
+        </h3>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p>
+            The game Rust recently added the option to pair server with mobile <br>
+            app rust+. This app provides information such as in-game time, season, <br>
+            team chat messages but also map, drone view and much more. <br>
+            <br>
+            The reason it is such a deal is that I managed to convert all of this <br> 
+            info and use it in discord via discord.py API. Then, all of this is <br>
+            to webapp which displays all information from rust+ but also has <br>
+            options like CPU and Memory usage. 
+        </p>
+    </div>
+    <footer class="bg-dark py-5 mt-5">
+        <div class="container text-light text-center">
+            <p class="display-5 mb-3">
+                Kaiy Co.
+            </p>
+            <small class="text-white-50">&copy; MIT license.</small>
+        </div>
+    </footer>
+</body>
+</html>
