@@ -49,5 +49,10 @@ def StoryOfKaiy():
 def Art():
     return render_template("Art.html")
 
+
+@app.route('/Sokkatto')
+def Sokkatto():
+    return render_template("sokkatto.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
