@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, url_for, session, render_template
-
+import hashlib
 
 # Define a list of hardcoded users
 users = {"Admin": "Heslo"}
@@ -28,9 +28,14 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
+        hashPass = password
+        hashUser = username
+        HP = hashlib.md5(hashPass.encode())
+        HU = hashlib.md5(hashUser.encode())
+
         # Write user information to a text file
         with open('users.txt', 'a') as file:
-            file.write(f'{username},{password}\n')
+            file.write(f'{HU.hexdigest()},{HP.hexdigest()}\n')
 
         # Redirect to login page
         return redirect('/login')
@@ -44,11 +49,15 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
+        # Hash username and password using MD5 algorithm
+        hashPass = hashlib.md5(password.encode()).hexdigest()
+        hashUser = hashlib.md5(username.encode()).hexdigest()
+
         with open('users.txt', 'r') as file:
             lines = file.readlines()
             for line in lines:
                 user, pwd = line.strip().split(',')
-                if user == username and pwd == password:
+                if user == hashUser and pwd == hashPass:
                     # User found, redirect to home page or appropriate page
                     return redirect('/index')
 
