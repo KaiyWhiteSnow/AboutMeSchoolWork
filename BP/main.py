@@ -21,7 +21,6 @@ def notHome():
 def home():    
     return render_template("index.html")
 
-# TODO: Fucking database
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':

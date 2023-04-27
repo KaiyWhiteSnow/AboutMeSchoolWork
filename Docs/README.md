@@ -4,6 +4,8 @@
 ### Co potřebujete
 - Python 3.6+
 - Flask 
+- Stáhněte si pip pomocí "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py" a následně "python get-pip.py"
+- Pro automatickou instalaci flasku napište pip install -r requirements.txt
 
 ### Spuštění
 - Otevřete konzoli a pomocí "cd" se dostaňte do složky BP/
