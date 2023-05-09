@@ -84,6 +84,3 @@ def Art():
 @app.route('/sokkatto')
 def sokkatto():
     return render_template("sokkatto.html")
-
-if __name__ == "__main__":
-    app.run(debug=True)
