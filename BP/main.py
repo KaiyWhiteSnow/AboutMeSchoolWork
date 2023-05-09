@@ -12,7 +12,10 @@ app.secret_key = "key"
 #In case I forget, this is for initial page but is exactly the same as index which everything will redirect to
 @app.route("/", methods=['GET', 'POST'])
 def notHome():
-    return render_template('register.html')
+    if "username" not in session:
+        return render_template("index.html")
+    else:
+        return render_template("index.html", sessionUser=sessionUser)
 
 @app.route("/index", methods=['GET', 'POST'])
 def home():    
