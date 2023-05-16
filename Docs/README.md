@@ -13,6 +13,9 @@
 - *Windows* py main.py
 - Web naleznete na adrese http://127.0.0.1:5000
 
+### Live web
+- https://kaiy-white-snow.onrender.com
+
 ## Dokumentace 
 - (Dokumentace)[https://docs.google.com/document/d/16bZ2tGoWRD7pR2YI9F7VSUN2B_GV1FiX4tUejSjsuHo/edit?usp=sharing]
 - PDF vezrze ve složce Docs
