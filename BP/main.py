@@ -1,11 +1,6 @@
 from flask import Flask, request, redirect, url_for, session, render_template
 import hashlib
 
-# Define a list of hardcoded users
-users = {"Admin": "Heslo"}
-sessionUser = "SysAdmin"
-
-
 app = Flask(__name__)
 app.secret_key = "key"
 
@@ -13,10 +8,10 @@ app.secret_key = "key"
 @app.route("/", methods=['GET', 'POST'])
 def notHome():
     if "username" not in session:
-        return render_template("index.html")
+        return redirect('/login')
     else:
-        return render_template("index.html", sessionUser=sessionUser)
-
+        return redirect('/index')
+    
 @app.route("/index", methods=['GET', 'POST'])
 def home():    
     return render_template("index.html")
@@ -57,7 +52,8 @@ def login():
             for line in lines:
                 user, pwd = line.strip().split(',')
                 if user == hashUser and pwd == hashPass:
-                    # User found, redirect to home page or appropriate page
+                    # User found, store username in session and redirect to home page
+                    session["username"] = username
                     return redirect('/index')
 
         # User not found, show error message
