@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kaiy | My Story</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaiy | {{ PageName }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2aac6f8878.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <div class="collapse navbar-collapse" id="navbarText">
-                            <span class="navbar-text"> <img width="30" height="30" class="d-inline-block align-top" alt="Logo" src="/static/img/pfp.png" />{{sessionUser}}</span>
-                        </div>
-                    </li>
-                </ul>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="../static/img/pfp.png" alt="Bootstrap" width="30" height="30">
+                    </a>
+                </div>
+            </nav>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
@@ -35,37 +35,38 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">My Work</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Art</a></li>
-                            <li><a class="dropdown-item" href="#">Literature</a></li>
-                            <li><a class="dropdown-item" href="#">Philosophy</a></li>
+                            <li><a class="dropdown-item" href="./Art">Art</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Sokkatto</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">What Is Sokkatto</a></li>
-                            <li><a class="dropdown-item" href="#">How It All Started</a></li>
-                            <li><a class="dropdown-item" href="#">Current progress</a></li>
+                            <li><a class="dropdown-item" href="./sokkatto">What Is Sokkatto</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Account</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                            <li><a class="dropdown-item" href="/register">Register</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <footer class="bg-dark py-5 fixed-bottom">
-        <div class="container text-light text-center">
+
+
+    {% block content %} {% endblock %}
+
+    <footer class="bg-dark text-light py-5 Main_footer">
+        <div class="container text-center">
             <p class="display-5 mb-3">
                 Kaiy Co.
             </p>
             <small class="text-white-50">&copy; MIT license.</small>
         </div>
     </footer>
-    
+
 </body>
 </html>
