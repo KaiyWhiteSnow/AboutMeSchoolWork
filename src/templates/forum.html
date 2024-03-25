@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for post in posts %}
+<div class="post">
+    <div class="postContent">
+        <h2>{{ post.title }}
+            <p style="font-size: small; margin-top: 10px; margin-bottom: 10px;">
+                Created at: {{ post.created_at.strftime("%d.%m.%Y") }} by {{ username }}
+            </p>
+        </h2>
+        <p>{{ post.content }}</p>
+    </div>
+</div>
+{% endfor %}    
+{% endblock %}

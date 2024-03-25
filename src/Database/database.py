@@ -11,7 +11,8 @@ session = Session()
 
 from Database.Models.user import Base as UserBase
 UserBase.metadata.create_all(engine)
-
+from Database.Models.post import Base as PostBase
+PostBase.metadata.create_all(engine)
 
 # Function to get a session with rollback capability
 @contextmanager

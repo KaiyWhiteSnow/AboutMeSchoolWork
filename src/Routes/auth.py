@@ -26,11 +26,11 @@ def login():
         if check == 1:
             # Authentication successful, set session variable
             session['username'] = username
-            return redirect(url_for("main.home")) 
+            return redirect("/") 
         else: 
             return "Wrong name or password"
             
-    return render_template("index.html")
+    return render_template("login.html")
             
 @auth.route("/register", methods=["POST", "GET"])
 def register():
