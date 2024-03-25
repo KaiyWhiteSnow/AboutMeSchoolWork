@@ -1,0 +1,11 @@
+version: '3'  # or higher
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Specify Dockerfile explicitly
+    ports:
+      - "5000:5000"
+    volumes:
+      - './src:/usr/src'
